@@ -33,10 +33,10 @@ console.log(sort_prime(number));
 console.timeEnd("Func");
 
 console.log("");
-console.log("MyFunc");
-console.time("MyFunc");
+console.log("MyClass");
+console.time("MyClass");
 console.log(new PrimeNumbers().getPrimeNumbersUntil(number));
-console.timeEnd("MyFunc");
+console.timeEnd("MyClass");
 
 
   setTimeout(() => { }, 100);
