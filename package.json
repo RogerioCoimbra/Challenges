@@ -1,0 +1,22 @@
+{
+  "name": "challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "ugly": "node ./node/exercises/UglyNumbers.js",
+    "prime": "node ./node/exercises/PrimeNumbers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:RogerioCoimbra/Challenges.git"
+  },
+  "author": "RogerioCoimbra",
+  "bugs": {
+    "url": "https://github.com/RogerioCoimbra/Challenges/issues"
+  },
+  "homepage": "https://github.com/RogerioCoimbra/Challenges#readme",
+  "dependencies": {
+    "get-primes": "^1.0.3"
+  }
+}
