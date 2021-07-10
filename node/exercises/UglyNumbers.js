@@ -18,8 +18,8 @@ process.stdin.on('end', _ => {
         return string.trim();
     });
 
-    main();    
-    
+    main();
+
 });
 
 function readLine() {
@@ -29,8 +29,7 @@ function readLine() {
 function main() {
     let t = parseInt(readLine());
     let i = 0;
-    for(;i<t;i++)
-    {
+    for (; i < t; i++) {
         let N = parseInt(readLine());
         let obj = new Solution();
         let res = obj.getNthUglyNo(N);
@@ -50,63 +49,56 @@ function main() {
 
 class Solution {
 
-    //Is a ugly number if:
-    // - N > 5 and not a prime;
-    // - not is divisible for prime bigger than 5 
+    //25 -> 54 OK
+    //26 -> 58 NOK (Deveria ser o 60)
 
-
-//25 -> 54 OK
-//26 -> 58 NOK (Deveria ser o 60)
-
-    getNthUglyNo(number){
+    getNthUglyNo(number) {
         let primeNumbers = new PrimeNumbers();
 
         let currentUglyNumber = 1;
         let currentPosition = 1;
 
-        if(number==currentPosition)
+        if (number == currentPosition)
             return currentUglyNumber;
-        
+
         let primes = primeNumbers.getPrimeNumbersUntil(number);
 
         console.log(primes);
 
-        while(true)
-        {
+        while (true) {
             currentPosition++;
 
-            if(primes.filter(element => element <= 5).some(element => this.checkUglyPrime(currentPosition, element)))
-            {
-                 if(primes.filter(element => element > 5).every(element => !this.checkUglyPrime(currentPosition, element)))
+            if (primes.filter(element => element <= 5).some(element => this.checkUglyPrime(currentPosition, element))) {
+                if (primes.filter(element => element > 5).every(element => !this.checkUglyPrime(currentPosition, element)))
                     currentUglyNumber++;
             }
-            
-            if(number==currentUglyNumber) 
+
+            if (number == currentUglyNumber)
                 return currentPosition;
         }
     }
 
-    checkUglyPrime(number, prime){
-        return number%prime===0;
+    checkUglyPrime(number, prime) {
+        return number % prime === 0;
     }
 }
 
-class PrimeNumbers{
-    getPrimeNumbersUntil(n){
+class PrimeNumbers {
+    getPrimeNumbersUntil(n) {
         let arrayPrime = [];
 
-        for (let i=2; i<=n; i++)
-            if(this.checkPrimeNumber(i))
+        for (let i = 2; i <= n; i++)
+            if (this.checkPrimeNumber(i))
                 arrayPrime.push(i)
 
         return arrayPrime;
     }
 
-    checkPrimeNumber(n){
+    checkPrimeNumber(n) {
         let result = true;
 
-        for (let i=2; i<n; i++) {
-            if(n%i===0)
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0)
                 result = false;
         }
 
