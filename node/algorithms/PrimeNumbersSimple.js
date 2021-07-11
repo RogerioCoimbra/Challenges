@@ -1,4 +1,5 @@
-class PrimeNumbers {
+//Simple algo
+class PrimeNumbersSimple {
     getPrimeNumbersUntil(n) {
         let arrayPrime = [];
 
@@ -24,4 +25,4 @@ class PrimeNumbers {
 }
 
 
-module.exports = PrimeNumbers;
+module.exports = PrimeNumbersSimple;

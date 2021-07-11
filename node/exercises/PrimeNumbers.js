@@ -1,7 +1,10 @@
 const prime = require("get-primes");
-const PrimeNumbers = require("../../node/algorithms/PrimeNumbers");
+const PrimeNumbersSimple = require("../algorithms/PrimeNumbersSimple");
+const PrimeNumbersSieve = require("../algorithms/PrimeNumbersSieve");
+const PrimeNumbersSegmentedSieve = require("../algorithms/PrimeNumbersSegmentedSieve");
 
-const number = 100000;
+//const number = 100000000;
+  const number = 100000000;
 
 function sort_prime(num) {
   var prime_num1 = [], prime_num2 = [];
@@ -36,13 +39,29 @@ console.log(primeFunc.length);
 console.log(primeFunc);
 console.timeEnd("Func");
 
+/* console.log("");
+console.log("My PrimeNumbersSimple");
+console.time("My primeNumbersSimple");
+let primeNumbersSimple = new PrimeNumbersSimple().getPrimeNumbersUntil(number);
+console.log(primeNumbersSimple.length);
+console.log(primeNumbersSimple);
+console.timeEnd("My primeNumbersSimple"); */
+
 console.log("");
-console.log("MyClass");
-console.time("MyClass");
-let primeMyClass = new PrimeNumbers().getPrimeNumbersUntil(number);
-console.log(primeMyClass.length);
-console.log(new PrimeNumbers().getPrimeNumbersUntil(number));
-console.timeEnd("MyClass");
+console.log("My PrimeNumbersSieve");
+console.time("My PrimeNumbersSieve");
+let primeNumbersSieve = new PrimeNumbersSieve().getPrimeNumbersUntil(number);
+console.log(primeNumbersSieve.length);
+console.log(primeNumbersSieve);
+console.timeEnd("My PrimeNumbersSieve");
+
+console.log("");
+console.log("My PrimeNumbersSegmentedSieve");
+console.time("My PrimeNumbersSegmentedSieve");
+let primeNumbersSegmentedSieve = new PrimeNumbersSegmentedSieve().getPrimeNumbersUntil(number);
+console.log(primeNumbersSegmentedSieve.length);
+console.log(primeNumbersSegmentedSieve);
+console.timeEnd("My PrimeNumbersSegmentedSieve");
 
 
 setTimeout(() => { }, 100);
